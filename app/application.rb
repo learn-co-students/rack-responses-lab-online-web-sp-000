@@ -4,7 +4,6 @@ class Application
     resp = Rack::Response.new
 
     time = Time.now
-    t2 =
 
     resp.write "#{time}\n"
 
