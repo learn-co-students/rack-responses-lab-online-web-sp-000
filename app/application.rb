@@ -1,7 +1,7 @@
 class Application
 
   def call(env)
-    time = Time.new
+    time = Time.now
     resp = Rack::Response.new
     # print time.hour
     if time.hour < 12
