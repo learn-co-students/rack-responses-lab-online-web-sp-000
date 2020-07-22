@@ -4,9 +4,7 @@ class Application
 
     current_time = Time.now
 
-    resp.write "#{current_time}\n"
-
-    if current_time <= 11
+    if current_time.hour <= 11
       resp.write "Good Morning!"
     else
       resp.write "Good Afternoon!"
