@@ -2,13 +2,11 @@ class Application
   def call(env)
     resp = Rack::Response.new
 
-    before_noon = Kernel.rand(1..11)
-    after_noon = Kernel.rand(12..24)
+    current_time = Time.now
 
-    resp.write "#{before_noon}\n"
-    resp.write "#{after_noon}\n"
+    resp.write "#{current_time}\n"
 
-    if before_noon
+    if current_time <= 11
       resp.write "Good Morning!"
     else
       resp.write "Good Afternoon!"
