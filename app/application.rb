@@ -1,17 +1,16 @@
 class Application
 
     def call(env)
+  
       resp = Rack::Response.new
-   
-        current = Time.new
-   
-      if  current.hour.to_i < 12
+  
+      if (0..11).include?(Time.now.hour)
         resp.write "Good Morning!"
       else
         resp.write "Good Afternoon!"
-   
+      end
+  
       resp.finish
-    end
     end
   
   end
